@@ -1,0 +1,11 @@
+## Interface: 11302
+## Title: Icecreamer
+## Title-enUS: Icecreamer
+## Title-ruRU: Мороженщик
+## Author: Nick Mitin
+## Version: 0.1
+## SavedVariablesPerCharacter: IcecreamedPlayers
+
+Icecreamer.lua
+Locales\enUS.lua
+Locales\ruRU.lua
