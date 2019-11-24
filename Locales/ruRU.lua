@@ -5,4 +5,6 @@ Icecreamer__locale["ruRU"] = {
     ["Icecreamed players discovery enabled"] = "Обнаружение отмороженых игроков включено",
     ["Icecreamed players discovery disabled"] = "Обнаружение отмороженых игроков выключено",
     ["on and off arguments only supported"] = "Поддерживаются только аргументы on и off",
+    ["%s might not want Icecream. Ask first"] = "%s возможно не хочет мороженое, лучше сначала спросить",
+    ["Out of icecream!"] = "|cffff0000Мороженое кончилось!",
 }

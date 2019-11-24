@@ -4,7 +4,7 @@
 ## Title-ruRU: Мороженщик
 ## Author: Nick Mitin
 ## Version: 0.1
-## SavedVariablesPerCharacter: IcecreamedPlayers
+## SavedVariablesPerCharacter: IcecreamedPlayers, CanceledPlayers
 
 Icecreamer.lua
 Locales\enUS.lua

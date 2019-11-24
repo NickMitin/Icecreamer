@@ -38,6 +38,7 @@ function events:TRADE_CLOSED()
 end
 function events:TRADE_REQUEST_CANCEL()
     -- print("trade request canceled")
+    Icecreamer__wait(1, Icecreamer__cancelTransaction, playerName, realmName)
     tradeSessionCanceled = true
     tradeSessionSuccess = false
 end
@@ -63,6 +64,9 @@ function events:PLAYER_TARGET_CHANGED()
     end
     if IcecreamedPlayers[playerName] ~= nil and IcecreamedPlayers[playerName] > 0 then
         Icecreamer__print("%s has been icecreamed %d times", playerName, IcecreamedPlayers[playerName])
+        if CanceledPlayers[playerName] ~= nil then
+            Icecreamer__print("%s might not want Icecream. Ask first", playerName)
+        end
     else
         Icecreamer__print("%s never been icecreamed", playerName)
     end
@@ -71,6 +75,9 @@ function events:ADDON_LOADED(addonName)
     if addonName == "Icecreamer" then
         if IcecreamedPlayers == nil then
             IcecreamedPlayers = {}
+        end
+        if CanceledPlayers == nil then
+            CanceledPlayers = {}
         end
     end
 end
@@ -110,6 +117,16 @@ function Icecreamer__saveTransaction(playerName, realmName)
     tradeSessionSuccess = false
     saveInitiated = false
     tradeSessionCanceled = false
+end
+
+function Icecreamer__cancelTransaction(playerName, realmName)
+    if realmName ~= nil then
+        playerName = playerName .. "." .. realmName
+    end
+    if CanceledPlayers[playerName] == nil then
+        CanceledPlayers[playerName] = playerName
+    end
+    print(CanceledPlayers[playerName])
 end
 
 function Icecreamer__wait(delay, func, ...)
@@ -203,6 +220,8 @@ function Icecreamer__giveIcecream()
     if itemBagID > 0 and itemSlotID > 0 then
         giveSessionStarted = true
         Icecreamer__splitOnce()
+    else
+        Icecreamer__print("Out of icecream!")
     end
 end
 
