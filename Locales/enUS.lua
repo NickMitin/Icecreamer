@@ -6,5 +6,5 @@ Icecreamer__locale["enUS"] = {
     ["Icecreamed players discovery disabled"] = "Icecreamed players discovery disabled",
     ["on and off arguments only supported"] = "on and off arguments only supported",
     ["%s might not want Icecream. Ask first"] = "%s might not want Icecream. Ask first",
-    ["Out of icecream!"] = "|cffff0000Out of icecream!",
+    ["Out of icecream!"] = "|cffff0000Out of ice cream!",
 }
