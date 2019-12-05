@@ -101,6 +101,17 @@ end
 local waitTable = {};
 local waitFrame = nil;
 
+function Icecreamer__autobuy() 
+    for itemIndex = 1, GetMerchantNumItems() do
+        local name, texture, price, quantity, numAvailable, isUsable, extendedCost = GetMerchantItemInfo(itemIndex);
+        
+        if (name == icecreamName) then
+            print(name)
+            BuyMerchantItem(itemIndex, 20)
+        end
+    end
+end
+
 function Icecreamer__saveTransaction(playerName, realmName)
     Icecreamer__print("Icecream attempt. Icecream present: %d, trade session started: %d, trade session success: %d", icecreamPresent, tradeSessionStarted, tradeSessionSuccess)
     if realmName ~= nil then
@@ -166,6 +177,8 @@ local function MyAddonCommands(msg)
         discoveryEnabled = false  
     elseif cmd == "split" then
         Icecreamer__splitIcecream() 
+    elseif cmd == "buy" then
+        Icecreamer__autobuy()
     else
         Icecreamer__giveIcecream()
     end
