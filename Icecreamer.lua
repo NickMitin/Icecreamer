@@ -14,7 +14,7 @@ local tradeRequestInitiated  = false
 function events:TRADE_ACCEPT_UPDATE(playerAccepted, targetAccepted)
     -- print("trade accepted")
     if playerAccepted and targetAccepted then
-        tradeSessionSuccess = truex
+        tradeSessionSuccess = true
     end
 end
 function events:TRADE_SHOW()
@@ -113,7 +113,7 @@ function Icecreamer__autobuy()
 end
 
 function Icecreamer__saveTransaction(playerName, realmName)
-    Icecreamer__print("Icecream attempt. Icecream present: %d, trade session started: %d, trade session success: %d", icecreamPresent, tradeSessionStarted, tradeSessionSuccess)
+    -- Icecreamer__print("Icecream attempt. Icecream present: %d, trade session started: %d, trade session success: %d", icecreamPresent, tradeSessionStarted, tradeSessionSuccess)
     if realmName ~= nil then
         playerName = playerName .. "." .. realmName
     end
